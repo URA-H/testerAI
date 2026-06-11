@@ -1,0 +1,50 @@
+# testerAI 設定ファイル例
+# プロジェクト・案件ごとに複製してカスタマイズしてください。
+
+# ── 出力Excelの列定義 ─────────────────────────────────────────
+# テストケースExcelの列構成。順序・名称・必要性をプロジェクト毎に変えられます。
+# キー: 内部的な意味（テンプレートで参照）
+# header: Excelの列ヘッダ
+output_columns:
+  - key: id
+    header: "No."
+  - key: category
+    header: "機能カテゴリ"
+  - key: title
+    header: "テスト項目"
+  - key: precondition
+    header: "前提条件"
+  - key: steps
+    header: "操作手順"
+  - key: expected
+    header: "期待結果"
+  - key: viewpoint
+    header: "観点"          # 同値分割 / 境界値 / 異常系 等。差別化要素 #4。
+  - key: priority
+    header: "優先度"
+  - key: result
+    header: "確認結果"      # 実行時に書き込む空欄
+
+# ── 観点（テスト戦略）─────────────────────────────────────────
+# LLM がテストケースを生成する際に必ず考慮する観点。
+# 案件で重視するものに絞ったり、独自観点を追加したり可能。
+viewpoints:
+  - 同値分割
+  - 境界値分析
+  - 異常系
+  - エラー処理
+  - 入力検証
+
+# ── 命名規則 ─────────────────────────────────────────────────
+naming:
+  id_prefix: "TC"          # テストケースID接頭辞 (例: TC-0001)
+  id_digits: 4
+
+# ── 生成オプション ───────────────────────────────────────────
+generation:
+  # 1機能あたりに生成するテストケース数の目安
+  max_cases_per_feature: 10
+  # 出力言語
+  language: ja
+  # LLMモデル（環境変数 TESTERAI_MODEL でも上書き可能）
+  model: claude-sonnet-4-6
