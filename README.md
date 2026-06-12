@@ -1,5 +1,10 @@
 # testerAI
 
+[![CI](https://github.com/URA-H/testerAI/actions/workflows/ci.yml/badge.svg)](https://github.com/URA-H/testerAI/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![Node](https://img.shields.io/badge/node-%3E%3D20-brightgreen.svg)](https://nodejs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue.svg)](https://www.typescriptlang.org)
+
 公共系SIerの詳細設計書 (Word) から、テストケース一覧 (Excel) を生成するローカル CLI。
 ChatGPT直貼り付けの摩擦と、外部SaaSの社内セキュリティ問題、その両方を回避する設計。
 
